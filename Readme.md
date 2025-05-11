@@ -65,6 +65,10 @@ project/
 └── requirements.txt      # Dependências do projeto
 ```
 
+## Deploy
+O APP está disponível em:
+https://sentimentradarapp-6rusrx3rigukjgvsygesud.streamlit.app/
+
 ## Como usar
 
 1. Insira suas credenciais da API do Reddit no painel lateral
