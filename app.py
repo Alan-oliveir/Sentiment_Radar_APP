@@ -21,38 +21,39 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilo personalizado para melhorar a aparência
+# Estilo personalizado para o aplicativo
 st.markdown("""
-<style>
-    /* Remove o limite de largura máxima para usar toda a tela */
-    .stApp {
-        padding: 0;
-    }
-    /* Garantir que a sidebar fique na extrema esquerda */
+<style>    
+    /* Configuração da sidebar */    
     [data-testid="stSidebar"] {
         min-width: 300px;
         max-width: 300px;
         background-color: #f8f9fa;
     }
-    /* Ajustes para o conteúdo principal */
+
+    /* Configuração do conteúdo principal - centralizado */
     .main .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
-        max-width: calc(100% - 300px);
-        margin-left: 300px;
+        max-width: 1000px;
         padding-left: 2rem;
         padding-right: 2rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+
+    /* Estilos de cabeçalhos e outros elementos */
     h1, h2, h3 {
         margin-top: 1rem;
         margin-bottom: 1rem;
-    }    
+    }
 </style>
 """, unsafe_allow_html=True)
 
 # Título principal
 st.title("📊 Analisador de Sentimentos em Redes Sociais")
 st.subheader("Extraindo percepções públicas do Reddit")
+st.markdown("---")  # Linha separadora
 
 # Sidebar para configurações
 st.sidebar.header("Configurações")
