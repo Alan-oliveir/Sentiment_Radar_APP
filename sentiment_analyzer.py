@@ -2,7 +2,6 @@
 Módulo para análise de sentimento e processamento de texto
 """
 import re
-from collections import Counter
 
 import pandas as pd
 from textblob import TextBlob
@@ -91,32 +90,36 @@ def simple_tokenize(text):
     return text.lower().split()
 
 
-def get_most_common_words(texts, n=10):
+def get_common_words_by_sentiment(texts, sentiments, n=20):
     """
-    Identifica as palavras mais comuns em um conjunto de textos
-    
-    Args:
-        texts (list): Lista de textos para análise
-        n (int, optional): Número de palavras para retornar
-        
-    Returns:
-        list: Lista de tuplas (palavra, frequência) ordenadas por frequência
-    """
-    # Combinar stopwords de diferentes idiomas
+        Conta as palavras mais comuns e associa o sentimento dominante a cada uma delas.
+
+        Args:
+            texts (list): Lista de textos limpos
+            sentiments (list): Lista de rótulos de sentimento correspondentes
+            n (int): Número de palavras a retornar
+
+        Returns:
+            list: Lista de tuplas (palavra, frequência total, sentimento dominante)
+        """
+    from collections import defaultdict
+
     stop_words = STOPWORDS['english'].union(STOPWORDS['portuguese'])
+    word_sentiment_counts = defaultdict(lambda: {'Positivo': 0, 'Neutro': 0, 'Negativo': 0})
 
-    words = []
-
-    for text in texts:
-        if not text or pd.isna(text):
-            continue
-
-        # Tokenizar e filtrar palavras
+    for text, sentiment in zip(texts, sentiments):
         tokens = simple_tokenize(text)
-        filtered_tokens = [word for word in tokens
-                           if word.isalpha() and word.lower() not in stop_words and len(word) > 2]
-        words.extend(filtered_tokens)
+        filtered_tokens = [word for word in tokens if word.isalpha() and word not in stop_words and len(word) > 2]
+        for token in filtered_tokens:
+            word_sentiment_counts[token][sentiment] += 1
 
-    # Contar frequências
-    word_counts = Counter(words)
-    return word_counts.most_common(n)
+    # Montar lista com sentimento dominante
+    result = []
+    for word, counts in word_sentiment_counts.items():
+        total = sum(counts.values())
+        dominant_sentiment = max(counts, key=counts.get)
+        result.append((word, total, dominant_sentiment))
+
+    # Retornar os top N mais frequentes
+    result.sort(key=lambda x: x[1], reverse=True)
+    return result[:n]

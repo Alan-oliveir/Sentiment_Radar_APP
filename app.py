@@ -11,7 +11,7 @@ from visualization import (
     display_wordcloud_tabs,
     display_common_words,
     display_posts,
-    display_visualization_summary
+    display_sentiment_distribution
 )
 
 # Configuração da página
@@ -46,13 +46,7 @@ st.markdown("""
     h1, h2, h3 {
         margin-top: 1rem;
         margin-bottom: 1rem;
-    }
-    .sentiment-metrics {
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-    }
+    }    
 </style>
 """, unsafe_allow_html=True)
 
@@ -93,7 +87,6 @@ def display_results(df):
     st.subheader("Resumo da Análise")
 
     # Métricas em caixas coloridas
-    st.markdown('<div class="sentiment-metrics">', unsafe_allow_html=True)
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric("Total de Posts", len(df))
@@ -103,21 +96,21 @@ def display_results(df):
         st.metric("Posts Neutros", len(df[df['sentiment'] == 'Neutro']))
     with col4:
         st.metric("Posts Negativos", len(df[df['sentiment'] == 'Negativo']))
-    st.markdown('</div>', unsafe_allow_html=True)
-
-    # Nova função para visão geral (gráfico de pizza + nuvem de palavras lado a lado)
-    display_visualization_summary(df)
 
     # Tabs para visualizações detalhadas
-    tab1, tab2, tab3 = st.tabs(["Nuvens de Palavras", "Termos Frequentes", "Posts"])
+    tab1, tab2, tab3, tab4 = st.tabs(
+        ["Distribuição de Sentimentos", "Nuvens de Palavras", "Termos Frequentes", "Posts"])
 
     with tab1:
-        display_wordcloud_tabs(df)
+        display_sentiment_distribution(df)
 
     with tab2:
-        display_common_words(df)
+        display_wordcloud_tabs(df)
 
     with tab3:
+        display_common_words(df)
+
+    with tab4:
         display_posts(df)
 
 
@@ -152,7 +145,7 @@ def main():
     info_placeholder.empty()
 
     # Botão para iniciar a análise
-    if st.sidebar.button("Analisar Sentimentos"):
+    if st.sidebar.button("Analisar Sentimentos", use_container_width=True):
         with st.spinner("Buscando e analisando posts do Reddit..."):
             # Buscar dados
             df = fetch_reddit_data(
