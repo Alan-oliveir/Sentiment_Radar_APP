@@ -54,6 +54,17 @@ streamlit run app.py
 
 Acesse a aplicação em seu navegador: http://localhost:8501
 
+## Estrutura do projeto
+
+```
+project/
+├── app.py                # Arquivo principal com interface Streamlit
+├── reddit_client.py      # Funções para interagir com API do Reddit
+├── sentiment_analyzer.py # Análise de sentimento e processamento de texto
+├── visualization.py      # Funções para gráficos e visualização
+└── requirements.txt      # Dependências do projeto
+```
+
 ## Como usar
 
 1. Insira suas credenciais da API do Reddit no painel lateral
