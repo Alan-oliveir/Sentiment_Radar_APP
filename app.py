@@ -2,16 +2,16 @@
 Aplicativo Streamlit para análise de sentimentos em posts do Reddit
 """
 import time
+
 import streamlit as st
-import pandas as pd
 
 # Importações de módulos locais
 from reddit_client import fetch_reddit_data
 from visualization import (
-    display_sentiment_distribution,
     display_wordcloud_tabs,
     display_common_words,
-    display_posts
+    display_posts,
+    display_visualization_summary
 )
 
 # Configuração da página
@@ -20,6 +20,41 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
+
+# Estilo personalizado para melhorar a aparência
+st.markdown("""
+<style>
+    /* Remove o limite de largura máxima para usar toda a tela */
+    .stApp {
+        padding: 0;
+    }
+    /* Garantir que a sidebar fique na extrema esquerda */
+    [data-testid="stSidebar"] {
+        min-width: 300px;
+        max-width: 300px;
+        background-color: #f8f9fa;
+    }
+    /* Ajustes para o conteúdo principal */
+    .main .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        max-width: calc(100% - 300px);
+        margin-left: 300px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    h1, h2, h3 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .sentiment-metrics {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # Título principal
 st.title("📊 Analisador de Sentimentos em Redes Sociais")
@@ -55,9 +90,10 @@ def display_results(df):
         return
 
     # Resumo dos dados
-    st.header("Resumo da Análise")
+    st.subheader("Resumo da Análise")
 
-    # Métricas
+    # Métricas em caixas coloridas
+    st.markdown('<div class="sentiment-metrics">', unsafe_allow_html=True)
     col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric("Total de Posts", len(df))
@@ -67,12 +103,22 @@ def display_results(df):
         st.metric("Posts Neutros", len(df[df['sentiment'] == 'Neutro']))
     with col4:
         st.metric("Posts Negativos", len(df[df['sentiment'] == 'Negativo']))
+    st.markdown('</div>', unsafe_allow_html=True)
 
-    # Gráficos e visualizações
-    display_sentiment_distribution(df)
-    display_wordcloud_tabs(df)
-    display_common_words(df)
-    display_posts(df)
+    # Nova função para visão geral (gráfico de pizza + nuvem de palavras lado a lado)
+    display_visualization_summary(df)
+
+    # Tabs para visualizações detalhadas
+    tab1, tab2, tab3 = st.tabs(["Nuvens de Palavras", "Termos Frequentes", "Posts"])
+
+    with tab1:
+        display_wordcloud_tabs(df)
+
+    with tab2:
+        display_common_words(df)
+
+    with tab3:
+        display_posts(df)
 
 
 def main():
@@ -107,30 +153,31 @@ def main():
 
     # Botão para iniciar a análise
     if st.sidebar.button("Analisar Sentimentos"):
-        # Buscar dados
-        df = fetch_reddit_data(
-            keyword,
-            client_id=client_id,
-            client_secret=client_secret,
-            user_agent=user_agent,
-            subreddit=subreddit,
-            limit=limit_posts,
-            time_filter=time_filter
-        )
-
-        if not df.empty:
-            # Exibir resultados
-            display_results(df)
-
-            # Opção para baixar CSV
-            st.download_button(
-                label="Baixar dados como CSV",
-                data=df.to_csv(index=False).encode('utf-8'),
-                file_name=f"reddit_sentiment_{keyword}_{time.strftime('%Y%m%d_%H%M%S')}.csv",
-                mime='text/csv',
+        with st.spinner("Buscando e analisando posts do Reddit..."):
+            # Buscar dados
+            df = fetch_reddit_data(
+                keyword,
+                client_id=client_id,
+                client_secret=client_secret,
+                user_agent=user_agent,
+                subreddit=subreddit,
+                limit=limit_posts,
+                time_filter=time_filter
             )
-        else:
-            st.warning("Nenhum resultado encontrado. Tente outra palavra-chave ou ajuste os parâmetros.")
+
+            if not df.empty:
+                # Exibir resultados
+                display_results(df)
+
+                # Opção para baixar CSV
+                st.download_button(
+                    label="Baixar dados como CSV",
+                    data=df.to_csv(index=False).encode('utf-8'),
+                    file_name=f"reddit_sentiment_{keyword}_{time.strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime='text/csv',
+                )
+            else:
+                st.warning("Nenhum resultado encontrado. Tente outra palavra-chave ou ajuste os parâmetros.")
 
 
 if __name__ == "__main__":

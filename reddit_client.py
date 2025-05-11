@@ -1,14 +1,15 @@
 """
 Cliente para interagir com a API do Reddit
 """
-import praw
 import pandas as pd
+import praw
 import streamlit as st
+
 from sentiment_analyzer import analyze_sentiment, clean_text
 
 
-def fetch_reddit_data(keyword, client_id, client_secret, user_agent, 
-                    subreddit=None, limit=30, time_filter="week"):
+def fetch_reddit_data(keyword, client_id, client_secret, user_agent,
+                      subreddit=None, limit=30, time_filter="week"):
     """
     Busca posts do Reddit com base em uma palavra-chave e parâmetros definidos
     

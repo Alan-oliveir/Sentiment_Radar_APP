@@ -3,6 +3,7 @@ Módulo para análise de sentimento e processamento de texto
 """
 import re
 from collections import Counter
+
 import pandas as pd
 from textblob import TextBlob
 
