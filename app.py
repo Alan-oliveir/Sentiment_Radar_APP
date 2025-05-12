@@ -28,7 +28,30 @@ st.markdown("""
     [data-testid="stSidebar"] {
         min-width: 300px;
         max-width: 300px;
+    }
+
+    /* Modo claro - configurações específicas */
+    .light-mode [data-testid="stSidebar"] {
         background-color: #f8f9fa;
+        color: #212529;
+    }
+
+    /* Modo escuro - configurações específicas */
+    .dark-mode [data-testid="stSidebar"] {
+        background-color: #262730;
+        color: #ffffff;
+    }
+
+    /* Estilo para inputs em modo escuro */
+    .dark-mode input, .dark-mode textarea, .dark-mode [data-baseweb="select"] {
+        background-color: #3b3b3b !important;
+        color: #ffffff !important;
+        border-color: #555555 !important;
+    }
+
+    /* Estilo para labels em modo escuro */
+    .dark-mode label, .dark-mode .stTextInput > div > div > p {
+        color: #ffffff !important;
     }
 
     /* Configuração do conteúdo principal - centralizado */
@@ -48,6 +71,37 @@ st.markdown("""
         margin-bottom: 1rem;
     }
 </style>
+
+<script>
+    // Script para detectar o tema atual (claro/escuro)
+    const detectTheme = () => {
+        const bodyEl = window.parent.document.body;
+        const isDarkTheme = bodyEl.classList.contains('dark');
+        const htmlEl = document.querySelector('html');
+
+        if (isDarkTheme) {
+            htmlEl.classList.remove('light-mode');
+            htmlEl.classList.add('dark-mode');
+        } else {
+            htmlEl.classList.remove('dark-mode');
+            htmlEl.classList.add('light-mode');
+        }
+    };
+
+    // Executar detecção de tema
+    detectTheme();
+
+    // Criar um observador para detectar mudanças no tema
+    const observer = new MutationObserver(() => {
+        detectTheme();
+    });
+
+    // Observe o documento para mudanças na classe que indica o tema
+    observer.observe(window.parent.document.body, { 
+        attributes: true, 
+        attributeFilter: ['class'] 
+    });
+</script>
 """, unsafe_allow_html=True)
 
 # Título principal
