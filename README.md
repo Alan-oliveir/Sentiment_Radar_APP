@@ -1,11 +1,24 @@
-# 📊 Sentiment Radar - Analisador de Sentimentos em Redes Sociais
+# 📊 Sentiment Radar – Análise de Sentimentos em Tempo Real com Python, Streamlit e Reddit
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sentimentradarapp-6rusrx3rigukjgvsygesud.streamlit.app/)
 
-
 **Sentiment Radar** é uma aplicação web interativa que permite descobrir o que as pessoas realmente pensam sobre produtos, serviços ou marcas, analisando postagens do Reddit em tempo real.
+
+## 📚 Sumário
+
+- [Funcionalidades](#-funcionalidades)
+- [Demo Online](#-demo-online)
+- [Screenshots](#-screenshots)
+- [Instalação Rápida](#-instalação-rápida)
+- [Como Usar](#-como-usar)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Contribuições](#-contribuições)
+- [Licença](#-licença)
+- [Contato](#-contato)
+- [Autor](#-autor)
 
 ## 🌟 Funcionalidades
 
@@ -19,19 +32,19 @@
 
 ## 🚀 Demo Online
 
-Experimente agora mesmo! Acesse a aplicação através do link:
+Experimente agora mesmo! Acesse a aplicação através do link abaixo:  
 [https://sentimentradarapp-6rusrx3rigukjgvsygesud.streamlit.app/](https://sentimentradarapp-6rusrx3rigukjgvsygesud.streamlit.app/)
 
 ## 📸 Screenshots
 
-![Screenshot da Aplicação](https://via.placeholder.com/400x300?text=Dashboard)
+![Screenshot da Aplicação](https://github.com/Alan-oliveir/Sentiment_Radar_APP/blob/master/images/screenshot.png)
 
 ## 🛠️ Instalação Rápida
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/analisador-sentimentos-reddit.git
-cd analisador-sentimentos-reddit
+git clone https://github.com/Alan-oliveir/Sentiment_Radar_APP.git
+cd sentiment_radar_app
 
 # Instalar dependências
 pip install -r requirements.txt
@@ -40,7 +53,8 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-> ⚠️ **Importante**: Você precisará de credenciais da API do Reddit para usar todas as funcionalidades.
+> ⚠️ **Importante**: Você precisará de credenciais da API do Reddit para usar todas as funcionalidades.  
+> Crie suas credenciais em: https://www.reddit.com/prefs/apps  
 > Para instruções detalhadas, consulte [CONFIG.md](CONFIG.md).
 
 ## 🧩 Como Usar
@@ -81,7 +95,6 @@ sentiment_radar_app/
 └── CONFIG.md              # Guia de configuração
 ```
 
-
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para:
@@ -94,11 +107,17 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 
 ## 📜 Licença
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
 Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 📞 Contato
 
-Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em contato com os desenvolvedores.
+Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em contato com o desenvolvedor.   
 
 ---
-Desenvolvido por Alan de Oliveira. Sinta-se à vontade para contribuir e melhorar este projeto!
+
+## 👤 Autor
+
+Desenvolvido por **Alan de Oliveira Gonçalves**. Sinta-se à vontade para contribuir e melhorar este projeto!  
+[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Alan-oliveir)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alan-ogoncalves)
