@@ -91,7 +91,7 @@ Para configurar o ambiente de desenvolvimento:
    source venv/bin/activate  # No Windows: venv\Scripts\activate
    ```
 
-3. Consulte o arquivo [CONFIG.md](CONFIG.md) e o [README.md](README.md) para informações completas de uso e configuração.
+3. Consulte o arquivo [CONFIG.md](CONFIG.md) e o [README.md](../README.md) para informações completas de uso e configuração.
 
 
 ## 👀 Processo de Revisão

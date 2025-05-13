@@ -37,7 +37,7 @@ Experimente agora mesmo! Acesse a aplicação através do link abaixo:
 
 ## 📸 Screenshots
 
-![Screenshot da Aplicação](https://github.com/Alan-oliveir/Sentiment_Radar_APP/blob/master/images/screenshot.png)
+![Screenshot](https://github.com/Alan-oliveir/Sentiment_Radar_APP/blob/master/images/screenshot.png)
 
 ## 🛠️ Instalação Rápida
 
@@ -55,7 +55,7 @@ streamlit run app.py
 
 > ⚠️ **Importante**: Você precisará de credenciais da API do Reddit para usar todas as funcionalidades.  
 > Crie suas credenciais em: https://www.reddit.com/prefs/apps  
-> Para instruções detalhadas, consulte [CONFIG.md](CONFIG.md).
+> Para instruções detalhadas, consulte [CONFIG.md](docs/CONFIG.md).
 
 ## 🧩 Como Usar
 
@@ -98,7 +98,7 @@ sentiment_radar_app/
 
 ## 🤝 Contribuindo
 
-Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](CONTRIBUTING.md) para saber como participar.
+Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](docs/CONTRIBUTING.md) para saber como participar.
 
 ## 📜 Licença
 
