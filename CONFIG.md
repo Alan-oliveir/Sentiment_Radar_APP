@@ -174,7 +174,7 @@ Para dúvidas ou problemas, abra uma issue no repositório do projeto ou entre e
 
 ---
 
-## 👤 Autor
+### 👤 Autor
 
 Desenvolvido por **Alan de Oliveira Gonçalves**. Sinta-se à vontade para contribuir e melhorar este projeto!  
   

@@ -15,7 +15,7 @@
 - [Como Usar](#-como-usar)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Contribuições](#-contribuições)
+- [Contribuindo](#-contribuindo)
 - [Licença](#-licença)
 - [Contato](#-contato)
 - [Autor](#-autor)
@@ -92,23 +92,19 @@ sentiment_radar_app/
 ├── .gitignore             # Ignorar arquivos desnecessários
 ├── LICENSE                # Licença do projeto
 ├── README.md              # Este arquivo
+├── CONTRIBUTING.md        # Diretrizes de contribuição
 └── CONFIG.md              # Guia de configuração
 ```
 
-## 🤝 Contribuições
+## 🤝 Contribuindo
 
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. 🍴 Fazer um fork do projeto
-2. 🔄 Criar um branch para sua feature (`git checkout -b feature/incrivel`)
-3. 💾 Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. 📤 Push para o branch (`git push origin feature/incrivel`)
-5. 🔁 Abra um Pull Request
+Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](CONTRIBUTING.md) para saber como participar.
 
 ## 📜 Licença
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+  
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 📞 Contato
 
@@ -116,7 +112,7 @@ Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em cont
 
 ---
 
-## 👤 Autor
+### 👤 Autor
 
 Desenvolvido por **Alan de Oliveira Gonçalves**. Sinta-se à vontade para contribuir e melhorar este projeto!  
   
