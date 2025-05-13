@@ -124,7 +124,7 @@ em arquivos separados.
 
 Para garantir total transparência, este projeto:
 
-1. **Documenta** todas as interações significativas com ferramentas de IA no arquivo [prompts.md](docs/prompts.md), incluindo:
+1. **Documenta** todas as interações significativas com ferramentas de IA no arquivo [ai_prompts_log.md](docs/prompts.md), incluindo:
    - Data e ferramenta utilizada
    - Prompts enviados
    - Tipo de resultados obtidos
