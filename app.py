@@ -2,6 +2,7 @@
 Aplicativo Streamlit para análise de sentimentos em posts do Reddit
 """
 import time
+import os
 
 import streamlit as st
 
@@ -21,88 +22,22 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilo personalizado para o aplicativo
-st.markdown("""
-<style>    
-    /* Configuração da sidebar */    
-    [data-testid="stSidebar"] {
-        min-width: 300px;
-        max-width: 300px;
-    }
+# Função para carregar arquivo CSS ou JS
+def load_file_content(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
+    return ""
 
-    /* Modo claro - configurações específicas */
-    .light-mode [data-testid="stSidebar"] {
-        background-color: #f8f9fa;
-        color: #212529;
-    }
+# Carrega estilos CSS e scripts JS de arquivos externos
+css_content = load_file_content("static/styles.css")
+js_content = load_file_content("static/theme_detector.js")
 
-    /* Modo escuro - configurações específicas */
-    .dark-mode [data-testid="stSidebar"] {
-        background-color: #262730;
-        color: #ffffff;
-    }
+# Aplica CSS
+st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
 
-    /* Estilo para inputs em modo escuro */
-    .dark-mode input, .dark-mode textarea, .dark-mode [data-baseweb="select"] {
-        background-color: #3b3b3b !important;
-        color: #ffffff !important;
-        border-color: #555555 !important;
-    }
-
-    /* Estilo para labels em modo escuro */
-    .dark-mode label, .dark-mode .stTextInput > div > div > p {
-        color: #ffffff !important;
-    }
-
-    /* Configuração do conteúdo principal - centralizado */
-    .main .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        max-width: 1000px;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-    /* Estilos de cabeçalhos e outros elementos */
-    h1, h2, h3 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-</style>
-
-<script>
-    // Script para detectar o tema atual (claro/escuro)
-    const detectTheme = () => {
-        const bodyEl = window.parent.document.body;
-        const isDarkTheme = bodyEl.classList.contains('dark');
-        const htmlEl = document.querySelector('html');
-
-        if (isDarkTheme) {
-            htmlEl.classList.remove('light-mode');
-            htmlEl.classList.add('dark-mode');
-        } else {
-            htmlEl.classList.remove('dark-mode');
-            htmlEl.classList.add('light-mode');
-        }
-    };
-
-    // Executar detecção de tema
-    detectTheme();
-
-    // Criar um observador para detectar mudanças no tema
-    const observer = new MutationObserver(() => {
-        detectTheme();
-    });
-
-    // Observe o documento para mudanças na classe que indica o tema
-    observer.observe(window.parent.document.body, { 
-        attributes: true, 
-        attributeFilter: ['class'] 
-    });
-</script>
-""", unsafe_allow_html=True)
+# Aplica JavaScript
+st.markdown(f"<script>{js_content}</script>", unsafe_allow_html=True)
 
 # Título principal
 st.title("📊 Analisador de Sentimentos em Redes Sociais")

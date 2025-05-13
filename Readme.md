@@ -58,15 +58,23 @@ Acesse a aplicação em seu navegador: http://localhost:8501
 
 ```
 project/
-├── app.py                # Arquivo principal com interface Streamlit
-├── reddit_client.py      # Funções para interagir com API do Reddit
-├── sentiment_analyzer.py # Análise de sentimento e processamento de texto
-├── visualization.py      # Funções para gráficos e visualização
-└── requirements.txt      # Dependências do projeto
+├── app.py                 # Arquivo principal da aplicação
+├── reddit_client.py       # Funções para interagir com API do Reddit
+├── sentiment_analyzer.py  # Análise de sentimento e processamento de texto
+├── visualization.py       # Funções para gráficos e visualização
+├── resource_manager.py    # Gerenciador de recursos CSS/JS
+├── requirements.txt       # Dependências do projeto
+├── README.md              # Documentação do projeto
+├── LICENSE                # Licença do projeto
+└── static/                # Diretório de recursos estáticos
+    ├── styles.css         # Estilos CSS da aplicação
+    └── theme_detector.js  # Script de detecção de tema
 ```
 
 ## Deploy
-O APP está disponível em:
+
+A aplicação foi implantada na plataforma Streamlit Cloud, permitindo acesso fácil e rápido sem necessidade de instalação local.
+Acesse a aplicação através do seguinte link:
 https://sentimentradarapp-6rusrx3rigukjgvsygesud.streamlit.app/
 
 ## Como usar

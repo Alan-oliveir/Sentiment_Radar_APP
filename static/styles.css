@@ -1,0 +1,76 @@
+/* Configuração da sidebar */    
+[data-testid="stSidebar"] {
+    min-width: 300px;
+    max-width: 300px;
+}
+
+/* Modo claro - configurações específicas */
+.light-mode [data-testid="stSidebar"] {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Modo escuro - configurações específicas */
+.dark-mode [data-testid="stSidebar"] {
+    background-color: #262730;
+    color: #ffffff;
+}
+
+/* Estilo para inputs em modo escuro */
+.dark-mode input, .dark-mode textarea, .dark-mode [data-baseweb="select"] {
+    background-color: #3b3b3b !important;
+    color: #ffffff !important;
+    border-color: #555555 !important;
+}
+
+/* Estilo para labels em modo escuro */
+.dark-mode label, .dark-mode .stTextInput > div > div > p {
+    color: #ffffff !important;
+}
+
+/* Configuração do conteúdo principal - centralizado */
+.main .block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1000px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Estilos de cabeçalhos e outros elementos */
+h1, h2, h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Melhorar contraste dos placeholders no modo escuro */
+.dark-mode input::placeholder, .dark-mode textarea::placeholder {
+    color: #aaaaaa !important;
+    opacity: 1;
+}
+
+/* Melhoria na visualização da sidebar em modo escuro */
+.dark-mode [data-testid="stSidebar"] .block-container {
+    background-color: #262730;
+}
+
+/* Melhorar visualização de botões no modo escuro*/
+.dark-mode button {
+    color: #ffffff !important;
+    border-color: #555555 !important;
+}
+
+/* Melhorar visualização de sliders no modo escuro */
+.dark-mode .stSlider > div > div {
+    background-color: #555555 !important;
+}
+
+/* Melhorar cabeçalhos dentro da sidebar no modo escuro */
+.dark-mode [data-testid="stSidebar"] h1, 
+.dark-mode [data-testid="stSidebar"] h2, 
+.dark-mode [data-testid="stSidebar"] h3, 
+.dark-mode [data-testid="stSidebar"] h4 {
+    color: #ffffff !important;
+}
