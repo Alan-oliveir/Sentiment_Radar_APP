@@ -88,7 +88,7 @@ NLTK.
 
 - [x] Tipo de resultado:
   - [x] Refatoração de código
-  - [x] Restruturação do projeto
+  - [x] Reestruturação do projeto
 
 - [x] Breve descrição do resultado:
   - Alteração da estrutura do projeto para separar a lógica em diferentes arquivos:
@@ -259,7 +259,7 @@ sentimento.
 ### Resultado
 
 - [x] Tipo de resultado:
-  - [x] Melhorias nos inputs e labels da sibedar no modo escuro
+  - [x] Ajuste visual da sidebar no modo escuro
 
 - [x] Breve descrição do resultado:
     - Ajustes no layout da aplicação:  

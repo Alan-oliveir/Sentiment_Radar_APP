@@ -8,6 +8,7 @@ Obrigado por considerar contribuir para o projeto Sentiment Radar! Este document
 - [Como Contribuir](#-como-contribuir)
   - [Reportando Bugs](#-reportando-bugs)
   - [Sugerindo Melhorias](#-sugerindo-melhorias)
+  - [Uso de Ferramentas de IA](#-uso-de-ferramentas-de-ia)
   - [Enviando Pull Requests](#-enviando-pull-requests)
 - [Padrões de Código](#-padrões-de-código)
 - [Ambiente de Desenvolvimento](#-ambiente-de-desenvolvimento)
@@ -44,6 +45,21 @@ Ao sugerir uma melhoria, inclua:
 - Descrição do comportamento atual e o que você gostaria de ver
 - Explicação de por que esta melhoria seria útil para a maioria dos utilizadores
 
+### 🤖 Uso de Ferramentas de IA
+
+Este projeto utiliza ferramentas de Inteligência Artificial como suporte ao desenvolvimento. Se você deseja contribuir:
+
+- Consulte o arquivo **[ai_usage.md](../docs/ai_usage.md)** para entender como as ferramentas de IA foram utilizadas.
+- Registre seus prompts e interações com IA no arquivo **[prompts.md](ai_prompts_log.md)** seguindo o formato existente.
+
+Diretrizes para o uso de IA ao contribuir:
+
+1. **Transparência**: Documente todas as interações significativas com IA.
+2. **Revisão crítica**: Todo código ou conteúdo gerado por IA deve ser revisado, testado e adaptado.
+3. **Conformidade**: Certifique-se que o conteúdo gerado por IA está alinhado com os padrões de código e design do 
+projeto.
+4. **Atribuição**: Atualize o documento ai_usage.md caso use uma nova ferramenta de IA não listada anteriormente.
+
 ### 📤 Enviando Pull Requests
 
 1. 🍴 Faça um fork do repositório
@@ -65,6 +81,8 @@ Ao sugerir uma melhoria, inclua:
    git push origin feature/nome-da-feature
    ```
 6. 🔁 Abra um Pull Request
+
+
 
 ## 📏 Padrões de Código
 
@@ -91,7 +109,9 @@ Para configurar o ambiente de desenvolvimento:
    source venv/bin/activate  # No Windows: venv\Scripts\activate
    ```
 
-3. Consulte o arquivo [CONFIG.md](CONFIG.md) e o [README.md](../README.md) para informações completas de uso e configuração.
+3. Consulte o arquivo [CONFIG.md](configuration_guide.md) e o [README.md](../README.md) para informações completas de uso e configuração.
+
+
 
 
 ## 👀 Processo de Revisão

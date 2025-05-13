@@ -3,8 +3,8 @@
 ## Introdução
 
 Este documento descreve o uso de ferramentas de Inteligência Artificial (IA) durante o desenvolvimento deste projeto, 
-visando garantir a transparência no processo de criação, manutenção e evolução do software. O registro detalha como as 
-ferramentas de IA contribuíram para o desenvolvimento da aplicação web de análise de sentimentos em redes sociais.
+visando garantir a transparência no processo de criação, manutenção e evolução do software. Este registro detalha como 
+as ferramentas de IA contribuíram para o desenvolvimento da aplicação web de análise de sentimentos nas redes sociais.
 
 ## Ferramentas de Inteligência Artificial Utilizadas
 
@@ -111,7 +111,7 @@ Durante o desenvolvimento, foram encontrados alguns desafios ao utilizar conteú
 1. **Problema com recursos do NLTK**: A implementação inicial da análise de sentimentos encontrou erro com recursos 
 NLTK não encontrados (punkt_tab).
    - **Solução**: A ferramenta Claude IA sugeriu e criou uma versão alternativa simplificada da aplicação sem 
-dependência crítica do NLTK.
+dependência crítica dos recursos do NLTK.
 
 2. **Código monolítico**: O arquivo app.py tornou-se muito grande e difícil de manter.
    - **Solução**: Refatoração recomendada pela Claude IA para dividir o código em módulos especializados.
@@ -120,7 +120,26 @@ dependência crítica do NLTK.
    - **Solução**: Implementação de estilos condicionais baseados no tema atual e reorganização dos recursos estáticos 
 em arquivos separados.
 
-## Nota de Responsabilidade
+## Rastreamento e Documentação
+
+Para garantir total transparência, este projeto:
+
+1. **Documenta** todas as interações significativas com ferramentas de IA no arquivo [prompts.md](docs/prompts.md), incluindo:
+   - Data e ferramenta utilizada
+   - Prompts enviados
+   - Tipo de resultados obtidos
+   - Ajustes manuais realizados
+
+2. **Mantém** este sumário de alto nível [ai_usage.md](docs/ai_usage.md) para rápida visualização do uso de ferramentas de IA no projeto.
+
+Esta abordagem de documentação visa:
+
+- Garantir transparência sobre o uso de IA no desenvolvimento
+- Permitir auditoria das contribuições de IA no projeto
+- Facilitar a reprodutibilidade e compreensão do processo criativo
+- Servir como referência para futuros desenvolvedores e contribuidores
+
+## Responsabilidade Final
 
 Embora ferramentas de Inteligência Artificial tenham sido empregadas como suporte, **as decisões de implementação, 
 curadoria de código e validação final** foram realizadas por um desenvolvedor humano, que assume a responsabilidade 
@@ -128,5 +147,5 @@ integral pelo conteúdo, funcionamento e conformidade do software.
 
 ## Atualizações
 
-Este documento poderá ser atualizado conforme o uso de novas ferramentas de IA seja incorporado ao processo de 
-desenvolvimento.
+Este documento será atualizado sempre que novas ferramentas ou práticas de IA forem incorporadas ao projeto, garantindo 
+uma documentação transparente e atualizada.

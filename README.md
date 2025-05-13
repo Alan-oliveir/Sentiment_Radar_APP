@@ -15,6 +15,7 @@
 - [Como Usar](#-como-usar)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Uso de IA no Desenvolvimento](#-uso-de-ia-no-desenvolvimento)
 - [Contribuindo](#-contribuindo)
 - [Licença](#-licença)
 - [Contato](#-contato)
@@ -55,7 +56,7 @@ streamlit run app.py
 
 > ⚠️ **Importante**: Você precisará de credenciais da API do Reddit para usar todas as funcionalidades.  
 > Crie suas credenciais em: https://www.reddit.com/prefs/apps  
-> Para instruções detalhadas, consulte [CONFIG.md](docs/CONFIG.md).
+> Para instruções detalhadas, consulte [configuration_guide](docs/configuration_guide.md).
 
 ## 🧩 Como Usar
 
@@ -74,31 +75,45 @@ streamlit run app.py
 - **TextBlob** – análise de sentimento
 - **Matplotlib / WordCloud** – visualizações gráficas
 
-
-
 ## 📂 Estrutura do Projeto
 
 ```plaintext
 sentiment_radar_app/
-├── app.py                 # Aplicação principal
-├── reddit_client.py       # Integração com API do Reddit
-├── sentiment_analyzer.py  # Análise de sentimento
-├── visualization.py       # Componentes visuais
-├── resource_manager.py    # Gerenciador de recursos
-├── static/                # Recursos estáticos
-│   ├── styles.css         # Estilos da aplicação
-│   └── theme_detector.js  # Detecção de tema
-├── requirements.txt       # Dependências
-├── .gitignore             # Ignorar arquivos desnecessários
-├── LICENSE                # Licença do projeto
-├── README.md              # Este arquivo
-├── CONTRIBUTING.md        # Diretrizes de contribuição
-└── CONFIG.md              # Guia de configuração
+├── app.py                        # Aplicação principal
+├── reddit_client.py              # Integração com API do Reddit
+├── sentiment_analyzer.py         # Análise de sentimento
+├── visualization.py              # Componentes visuais
+├── resource_manager.py           # Gerenciador de recursos
+├── static/                       # Recursos estáticos
+│   ├── styles.css                # Estilos da aplicação
+│   └── theme_detector.js         # Detecção de tema
+├── docs/                         # Documentação do projeto
+│   ├── index.md                  # Índice da documentação
+│   ├── ai_usage.md               # Uso de IA no projeto
+│   ├── ai_prompts_log.md         # Registro de prompts utilizados   
+│   ├── configuration_guide.md    # Configuração e uso
+│   └── contribution_guide.md     # Guia de contribuição
+├── requirements.txt              # Dependências
+├── LICENSE                       # Licença do projeto
+├── CONTRIBUTING.md               # Diretrizes de contribuição
+└── README.md                     # Documentação principal
 ```
+
+## 🤖 Uso de IA no Desenvolvimento
+
+Este projeto foi desenvolvido com suporte de ferramentas de Inteligência Artificial. Para garantir transparência:
+
+- **[ai_usage.md](docs/ai_usage.md)**: Resumo das ferramentas de IA utilizadas, áreas de aplicação e casos de uso 
+específicos.
+- **[ai_prompts_log.md](docs/ai_prompts_log.md)**: Registro detalhado dos prompts utilizados, resultados obtidos e ajustes manuais 
+realizados.
+
+Estas informações visam documentar o processo criativo e dar crédito apropriado às ferramentas usadas, ao mesmo tempo 
+que mantém a integridade do projeto como produto de supervisão e decisão humana.
 
 ## 🤝 Contribuindo
 
-Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](docs/CONTRIBUTING.md) para saber como participar.
+Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](docs/contribution_guide.md) para saber como participar.
 
 ## 📜 Licença
 
@@ -108,7 +123,16 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICEN
 
 ## 📞 Contato
 
-Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em contato com o desenvolvedor.   
+Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em contato com o desenvolvedor.  
+
+---
+
+### 📄 Documentação Completa
+
+Toda a documentação técnica está organizada na pasta [`docs/`](docs/). Você pode acessar a visão geral e navegar por 
+todos os arquivos a partir do índice:
+
+➡️ [`docs/index.md`](docs/index.md)
 
 ---
 
