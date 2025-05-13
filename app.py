@@ -1,8 +1,8 @@
 """
 Aplicativo Streamlit para análise de sentimentos em posts do Reddit
 """
-import time
 import os
+import time
 
 import streamlit as st
 
@@ -22,12 +22,14 @@ st.set_page_config(
     layout="wide"
 )
 
+
 # Função para carregar arquivo CSS ou JS
 def load_file_content(file_path):
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             return file.read()
     return ""
+
 
 # Carrega estilos CSS e scripts JS de arquivos externos
 css_content = load_file_content("static/styles.css")

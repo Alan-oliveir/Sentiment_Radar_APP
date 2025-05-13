@@ -10,7 +10,7 @@ class ResourceManager:
     """
     Gerenciador de recursos para injetar CSS e JavaScript no Streamlit.
     """
-    
+
     @staticmethod
     def load_resource(file_path):
         """
@@ -26,7 +26,7 @@ class ResourceManager:
             with open(file_path, 'r', encoding='utf-8') as file:
                 return file.read()
         return ""
-    
+
     @staticmethod
     def inject_css(css_file_path):
         """
@@ -38,7 +38,7 @@ class ResourceManager:
         css_content = ResourceManager.load_resource(css_file_path)
         if css_content:
             st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
-    
+
     @staticmethod
     def inject_js(js_file_path):
         """
@@ -50,7 +50,7 @@ class ResourceManager:
         js_content = ResourceManager.load_resource(js_file_path)
         if js_content:
             st.markdown(f"<script>{js_content}</script>", unsafe_allow_html=True)
-    
+
     @staticmethod
     def ensure_static_dir():
         """
@@ -63,7 +63,7 @@ class ResourceManager:
         if not os.path.exists(static_dir):
             os.makedirs(static_dir)
         return static_dir
-    
+
     @staticmethod
     def create_file_if_not_exists(file_path, content):
         """
