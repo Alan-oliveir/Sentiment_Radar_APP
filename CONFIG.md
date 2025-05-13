@@ -177,5 +177,6 @@ Para dúvidas ou problemas, abra uma issue no repositório do projeto ou entre e
 ## 👤 Autor
 
 Desenvolvido por **Alan de Oliveira Gonçalves**. Sinta-se à vontade para contribuir e melhorar este projeto!  
+  
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Alan-oliveir)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alan-ogoncalves)
