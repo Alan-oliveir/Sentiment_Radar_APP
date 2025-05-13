@@ -51,7 +51,7 @@ Ao sugerir uma melhoria, inclua:
    ```bash
    git checkout -b feature/nome-da-feature
    ```
-   ou
+   ou  
    ```bash
    git checkout -b fix/nome-do-bug
    ```
@@ -91,7 +91,8 @@ Para configurar o ambiente de desenvolvimento:
    source venv/bin/activate  # No Windows: venv\Scripts\activate
    ```
 
-3. Consulte o arquivo [CONFIG.md](CONFIG.md) para configurações adicionais necessárias
+3. Consulte o arquivo [CONFIG.md](CONFIG.md) e o [README.md](README.md) para informações completas de uso e configuração.
+
 
 ## 👀 Processo de Revisão
 
