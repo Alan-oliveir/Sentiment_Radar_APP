@@ -103,7 +103,7 @@ Sua colaboração é muito valiosa!
 
 ---  
 
-### Autor
+## Autor
 
 Desenvolvido por **Alan de Oliveira Gonçalves**   
 [GitHub](https://github.com/Alan-oliveir) | [LinkedIn](https://www.linkedin.com/in/alan-ogoncalves)
