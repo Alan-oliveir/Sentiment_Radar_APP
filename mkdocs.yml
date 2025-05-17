@@ -1,0 +1,46 @@
+site_name: Sentiment Radar APP
+site_description: Análise de sentimentos em postagens do Reddit com Python e Streamlit
+site_author: Alan de Oliveira Gonçalves
+repo_url: https://github.com/Alan-oliveir/Sentiment_Radar_APP
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.instant
+    - content.code.annotate
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+nav:
+  - Início: index.md
+  - Configuração: configuration_guide.md
+  - Contribuindo: contribution_guide.md
+  - Registro de IA: ai_usage.md
+  - Registro de prompts: ai_prompts_log.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - footnotes
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Alan-oliveir
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/alan-ogoncalves
