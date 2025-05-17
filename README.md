@@ -1,4 +1,4 @@
-# 📊 Sentiment Radar – Análise de Sentimentos em Tempo Real com Python, Streamlit e Reddit
+# Sentiment Radar – Análise de Sentimentos com Python, Streamlit e Reddit
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -113,7 +113,7 @@ que mantém a integridade do projeto como produto de supervisão e decisão huma
 
 ## 🤝 Contribuindo
 
-Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](docs/contribution_guide.md) para saber como participar.
+Quer contribuir para o projeto? Ótimo! Confira o nosso [guia de contribuição](CONTRIBUTING.md) para saber como participar.
 
 ## 📜 Licença
 
@@ -127,12 +127,11 @@ Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em cont
 
 ---
 
-### 📄 Documentação Completa
-
-Acesse a documentação técnica completa em:  
+### 📄 Documentação Completa  
   
-➡️ https://alan-oliveir.github.io/Sentiment_Radar_APP
-
+Acesse a documentação técnica completa em:    
+➡️ https://alan-oliveir.github.io/Sentiment_Radar_APP  
+  
 ---
 
 ### 👤 Autor
