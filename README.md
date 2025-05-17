@@ -129,10 +129,9 @@ Se você tiver dúvidas ou sugestões, abra uma issue no GitHub ou entre em cont
 
 ### 📄 Documentação Completa
 
-Toda a documentação técnica está organizada na pasta [`docs/`](docs/). Você pode acessar a visão geral e navegar por 
-todos os arquivos a partir do índice:
-
-➡️ [`docs/index.md`](docs/index.md)
+Acesse a documentação técnica completa em:  
+  
+➡️ https://alan-oliveir.github.io/Sentiment_Radar_APP
 
 ---
 
