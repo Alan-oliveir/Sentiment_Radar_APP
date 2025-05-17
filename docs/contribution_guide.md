@@ -1,136 +1,109 @@
-# 🤝 Guia de Contribuição
+# Guia de Contribuição
 
-Obrigado por considerar contribuir para o projeto Sentiment Radar! Este documento fornece diretrizes para contribuir com o projeto.
-
-## 📚 Sumário
-
-- [Código de Conduta](#-código-de-conduta)
-- [Como Contribuir](#-como-contribuir)
-  - [Reportando Bugs](#-reportando-bugs)
-  - [Sugerindo Melhorias](#-sugerindo-melhorias)
-  - [Uso de Ferramentas de IA](#-uso-de-ferramentas-de-ia)
-  - [Enviando Pull Requests](#-enviando-pull-requests)
-- [Padrões de Código](#-padrões-de-código)
-- [Ambiente de Desenvolvimento](#-ambiente-de-desenvolvimento)
-- [Processo de Revisão](#-processo-de-revisão)
-- [Contato](#-contato)
-
-## 📜 Código de Conduta
-
-Este projeto e os seus participantes são regidos por um código de conduta que promove um ambiente aberto e respeitoso. Ao contribuir, você concorda em respeitar este código.
-
-Principais pontos:
-- Seja respeitoso e educado
-- Aceite críticas construtivas
-
-## 🚀 Como Contribuir
-
-### 🐛 Reportando Bugs
-
-Bugs são rastreados como [issues do GitHub](https://github.com/Alan-oliveir/Sentiment_Radar_APP/issues).
-
-Ao reportar um bug, inclua:
-- Um título claro e descritivo
-- Passos para reproduzir o problema
-- Comportamento esperado vs. comportamento observado
-- Screenshots, se aplicável
-- Qualquer detalhe adicional relevante
-
-### 💡 Sugerindo Melhorias
-
-Melhorias também são rastreadas como issues do GitHub.
-
-Ao sugerir uma melhoria, inclua:
-- Uma descrição clara do problema que a sua melhoria resolve
-- Descrição do comportamento atual e o que você gostaria de ver
-- Explicação de por que esta melhoria seria útil para a maioria dos utilizadores
-
-### 🤖 Uso de Ferramentas de IA
-
-Este projeto utiliza ferramentas de Inteligência Artificial como suporte ao desenvolvimento. Se você deseja contribuir:
-
-- Consulte o arquivo **[ai_usage.md](../docs/ai_usage.md)** para entender como as ferramentas de IA foram utilizadas.
-- Registre seus prompts e interações com IA no arquivo **[prompts.md](ai_prompts_log.md)** seguindo o formato existente.
-
-Diretrizes para o uso de IA ao contribuir:
-
-1. **Transparência**: Documente todas as interações significativas com IA.
-2. **Revisão crítica**: Todo código ou conteúdo gerado por IA deve ser revisado, testado e adaptado.
-3. **Conformidade**: Certifique-se que o conteúdo gerado por IA está alinhado com os padrões de código e design do 
-projeto.
-4. **Atribuição**: Atualize o documento ai_usage.md caso use uma nova ferramenta de IA não listada anteriormente.
-
-### 📤 Enviando Pull Requests
-
-1. 🍴 Faça um fork do repositório
-2. 🔄 Crie um branch para a sua feature ou correção:
-   ```bash
-   git checkout -b feature/nome-da-feature
-   ```
-   ou  
-   ```bash
-   git checkout -b fix/nome-do-bug
-   ```
-3. 💻 Faça as suas alterações, seguindo os padrões de código do projeto
-4. 💾 Commit suas mudanças:
-   ```bash
-   git commit -m 'Descrição clara das mudanças'
-   ```
-5. 📤 Push para o branch:
-   ```bash
-   git push origin feature/nome-da-feature
-   ```
-6. 🔁 Abra um Pull Request
-
-
-
-## 📏 Padrões de Código
-
-Para manter a qualidade do código:
-
-- Siga a [PEP 8](https://www.python.org/dev/peps/pep-0008/) para código Python
-- Documente novas funções e métodos
-- Mantenha a consistência com o estilo de código existente
-- Adicione testes para novas funcionalidades
-- Mantenha os commits organizados e com mensagens claras
-
-## 🛠️ Ambiente de Desenvolvimento
-
-Para configurar o ambiente de desenvolvimento:
-
-1. Instale as dependências de desenvolvimento:
-   ```bash
-   pip install -r requirements-dev.txt
-   ```
-
-2. Configure um ambiente virtual:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # No Windows: venv\Scripts\activate
-   ```
-
-3. Consulte o arquivo [CONFIG.md](configuration_guide.md) e o [README.md](../README.md) para informações completas de uso e configuração.
-
-
-
-
-## 👀 Processo de Revisão
-
-O processo de revisão garante a qualidade do código e consistência. Após enviar seu Pull Request:
-
-1. Um ou mais mantenedores revisarão o código
-2. Poderão ser solicitadas alterações ou melhorias
-3. Uma vez aprovado, um mantenedor fará o merge do PR
-
-## 📞 Contato
-
-Se você tiver dúvidas sobre contribuição, sinta-se à vontade para:
-- Abrir uma issue no GitHub
-- Entrar em contato com o autor
+Obrigado por considerar contribuir com o Sentiment Radar!  
+Este guia apresenta diretrizes para colaborar de forma clara e produtiva.
 
 ---
 
-Obrigado por contribuir para o Sentiment Radar! Sua ajuda é muito valiosa para melhorar este projeto.
+## Código de Conduta
 
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Alan-oliveir)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alan-ogoncalves)
+Todos os colaboradores devem seguir um código de conduta que promova respeito e inclusão.
+
+Principais pontos:
+- Respeite outros colaboradores
+- Receba feedback de forma construtiva
+
+---
+
+## Como Contribuir
+
+### Reportar Bugs
+
+1. Abra uma [issue](https://github.com/Alan-oliveir/Sentiment_Radar_APP/issues)
+2. Informe:
+   - Título claro
+   - Passos para reproduzir
+   - Comportamento esperado e observado
+   - Prints (se possível)
+
+### Sugerir Melhorias
+
+1. Abra uma issue com sugestão de melhoria
+2. Descreva o problema que deseja resolver
+3. Explique como sua sugestão é útil
+
+### Uso de Ferramentas de IA
+
+Se usar ferramentas como ChatGPT, Copilot ou Claude:
+
+- Registre seus prompts no arquivo [`ai_prompts_log.md`](ai_prompts_log.md)
+- Atualize o documento [`ai_usage.md`](ai_usage.md) com a ferramenta utilizada
+- Revise criticamente o código gerado
+- Teste antes de submeter
+
+### Enviando Pull Requests
+
+```bash
+# Fork e crie um novo branch
+git checkout -b feature/nova-funcionalidade
+
+# Após alterações
+git commit -m "Adiciona nova funcionalidade"
+git push origin feature/nova-funcionalidade
+```
+
+Depois disso, abra um Pull Request no GitHub.
+
+---
+
+## Padrões de Código
+
+- Siga a [PEP 8](https://www.python.org/dev/peps/pep-0008/)
+- Comente funções e métodos
+- Use nomes descritivos e commits claros
+- Adicione testes quando possível
+
+---
+
+## Ambiente de Desenvolvimento
+
+```bash
+# Instale dependências de desenvolvimento
+pip install -r requirements-dev.txt
+
+# Ative o ambiente virtual
+python -m venv venv
+source venv/bin/activate
+```
+
+Consulte também:
+- [`configuration_guide.md`](configuration_guide.md)
+- [`README.md`](../README.md)
+
+---
+
+## Revisão de Código
+
+- Seu PR será avaliado por um mantenedor
+- Você poderá ser solicitado a fazer ajustes
+- Uma vez aprovado, será integrado ao projeto
+
+---
+
+## Contato
+
+Dúvidas ou sugestões?
+- Abra uma issue no GitHub
+- Ou entre em contato diretamente pelo LinkedIn
+
+---
+
+**Obrigado por contribuir!**  
+Sua colaboração é muito valiosa!
+
+---  
+
+### Autor
+
+Desenvolvido por **Alan de Oliveira Gonçalves**   
+[GitHub](https://github.com/Alan-oliveir) | [LinkedIn](https://www.linkedin.com/in/alan-ogoncalves)

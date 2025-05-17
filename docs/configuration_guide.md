@@ -1,182 +1,143 @@
-# 🔧 CONFIG.md – Guia de Configuração do Sentiment Radar
+# Guia de Configuração do Sentiment Radar
 
-Este documento contém instruções detalhadas para configurar e executar o SentimentRadar, nossa aplicação de análise de sentimentos em redes sociais.
+Este guia contém instruções para configurar e executar a aplicação de análise de sentimentos em redes sociais.
 
-## 📚 Sumário
+---
 
-- [Requisitos do Sistema](#-requisitos-do-sistema)
-- [Obtendo Credenciais da API do Reddit](#-obtendo-credenciais-da-api-do-reddit)
-- [Configuração do Ambiente](#-configuração-do-ambiente)
-- [Executando a Aplicação](#️-executando-a-aplicação)
-- [Deploy no Streamlit Cloud](#-configuração-para-deploy)
-- [Ajustes de Parâmetros](#️-ajustando-parâmetros)
-- [Solução de Problemas](#️-solução-de-problemas)
-- [Modo Debug](#-usando-o-modo-debug)
-- [Recursos Adicionais](#-recursos-adicionais)
-- [Próximos Passos](#-próximos-passos)
-- [Contato e Suporte](#-contato-e-suporte)
-- [Autor](#-autor)
-
-## 📋 Requisitos do Sistema
+## Requisitos do Sistema
 
 - Python 3.8 ou superior
-- Pip (gerenciador de pacotes do Python)
-- Acesso à internet (para coleta de dados e instalação de dependências)
-- Conta de desenvolvedor do Reddit (para obter as credenciais da API)
+- Pip (gerenciador de pacotes)
+- Conta de desenvolvedor do Reddit
+- Acesso à internet
 
-## 🔑 Obtendo Credenciais da API do Reddit
+---
 
-### 1. Criar uma conta de desenvolvedor
+## Obtendo Credenciais da API do Reddit
 
-1. Acesse [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
-2. Faça login na sua conta do Reddit (ou crie uma se não tiver)
-3. Clique em "Create App" ou "Create Another App"
-4. Preencha os seguintes campos:
-   - **Name**: SentimentRadar (ou outro nome de sua escolha)
-   - **App Type**: Script
-   - **Description**: Aplicação para análise de sentimentos do Reddit
-   - **About URL**: (pode deixar em branco)
-   - **Redirect URI**: http://localhost:8501
-5. Clique em "Create App"
-6. Anote o **Client ID** (aparece abaixo do nome da aplicação) e o **Client Secret**
+1. Acesse [reddit.com/prefs/apps](https://www.reddit.com/prefs/apps)
+2. Faça login e clique em **Create App**
+3. Escolha o tipo **script**
+4. Preencha os campos necessários:
+   - Name: SentimentRadar
+   - Redirect URI: `http://localhost:8501`
+5. Anote seu **Client ID** e **Client Secret**
 
-### 2. Segurança das credenciais
+!!! warning
+    Nunca compartilhe suas credenciais nem as publique em repositórios públicos.
 
-- **NUNCA compartilhe** seu Client ID e Client Secret
-- **NÃO inclua** estas informações em repositórios públicos
+---
 
-## 🛠️ Configuração do Ambiente
+## Configuração do Ambiente
 
-### 1. Criar um ambiente virtual (recomendado)
+### 1. Criar ambiente virtual
 
 ```bash
-# No Windows
+# Windows
 python -m venv venv
-venv\Scripts\activate
+venv\Scriptsctivate
 
-# No macOS/Linux
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 2. Instalar as dependências
+### 2. Instalar dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Isso instalará todas as bibliotecas necessárias, incluindo:
-- streamlit
-- praw (Python Reddit API Wrapper)
-- pandas
-- textblob
-- wordcloud
-- matplotlib
-- numpy
+---
 
-## ▶️ Executando a Aplicação
-
-1. Com o ambiente virtual ativado, execute:
+## Executando a Aplicação
 
 ```bash
 streamlit run app.py
 ```
 
-2. A aplicação será aberta automaticamente no seu navegador padrão
-3. Se não abrir, acesse: `http://localhost:8501`
+Se não abrir automaticamente, acesse: [http://localhost:8501](http://localhost:8501)
 
-## 🔄 Configuração para Deploy
+---
 
-### Deploy no Streamlit Cloud
+## Deploy no Streamlit Cloud
 
-1. Faça o fork deste repositório para sua conta GitHub
-2. Acesse [https://streamlit.io/cloud](https://streamlit.io/cloud)
+1. Fork este repositório no GitHub
+2. Acesse [streamlit.io/cloud](https://streamlit.io/cloud)
 3. Faça login com sua conta GitHub
-4. Clique em "New app" e selecione o repositório
-5. Clique em "Deploy"
+4. Clique em **New App**, selecione o repositório e clique em **Deploy**
 
-## ⚙️ Ajustando Parâmetros
+---
 
-### Ajustando os limiares de sentimento
+## Ajustes de Parâmetros
 
-Para modificar a sensibilidade da análise de sentimento, altere os valores limiares na função `analyze_sentiment` no arquivo `sentiment_analyzer.py`:
-
-```python
-# Exemplo para tornar a análise mais sensível a sentimentos positivos/negativos
- if score < -0.1:
-     return score, "Negativo"
- elif score > 0.1:
-     return score, "Positivo"
- else:
-     return score, "Neutro"
-```
-
-### Personalizando a nuvem de palavras
-
-Modifique os parâmetros da nuvem de palavras no arquivo `visualization.py`:
+### Limiar de sentimentos (`sentiment_analyzer.py`)
 
 ```python
- wordcloud = WordCloud(
-     width=600,
-     height=300,
-     background_color='white',
-     stopwords=stop_words,
-     min_font_size=10,
-     max_words=100,
-     colormap='viridis'
- ).generate(filtered_texts)
+if score < -0.1:
+    return score, "Negativo"
+elif score > 0.1:
+    return score, "Positivo"
+else:
+    return score, "Neutro"
 ```
 
-## ⚠️ Solução de Problemas
+### Personalizar a nuvem de palavras (`visualization.py`)
 
-### Erro na coleta de posts do Reddit
+```python
+wordcloud = WordCloud(
+    width=600,
+    height=300,
+    background_color='white',
+    stopwords=stop_words,
+    max_words=100,
+    colormap='viridis'
+).generate(filtered_texts)
+```
 
-Se você encontrar erros ao coletar posts, verifique:
-- Sua conexão com a internet
-- Se as credenciais do Reddit estão corretas
-- Se há restrições de API impostas pelo Reddit
-- Se o subreddit especificado existe e é público
+---
 
-### Lentidão no processamento
+## Solução de Problemas
 
-Para conjuntos muito grandes de dados, o processamento pode ser lento. Considere:
-- Reduzir o número de posts coletados
-- Limitar a busca a subreddits específicos
+- Verifique conexão com a internet
+- Confirme as credenciais da API
+- Verifique se o subreddit existe e é público
+- Reduza a quantidade de posts para melhorar performance
 
-## 🔍 Usando o Modo Debug
+---
 
-Para diagnosticar problemas:
+## Modo Debug
 
 ```bash
 streamlit run app.py --logger.level=debug
 ```
 
-## 📚 Recursos Adicionais
+---
+
+## Recursos Adicionais
 
 - [Documentação do PRAW](https://praw.readthedocs.io/)
 - [Guia do Streamlit](https://docs.streamlit.io/)
-- [Tutorial de NLP com TextBlob](https://textblob.readthedocs.io/)
-- [Regras de API do Reddit](https://github.com/reddit-archive/reddit/wiki/API)
-
-## 🚀 Próximos Passos
-
-Para estender essa aplicação, considere:
-
-1. Adicionar suporte a outras redes sociais (como Twitter ou Instagram)
-2. Implementar análise de tópicos com LDA (Latent Dirichlet Allocation)
-3. Implementar análise de emoções mais detalhada
-4. Adicionar autenticação para proteger a aplicação
-
-## 📞 Contato e Suporte
-
-Agradeço por usar o SentimentRadar! Espero que você aproveite a análise de sentimentos em redes sociais.
-Para dúvidas ou problemas, abra uma issue no repositório do projeto ou entre em contato com o desenvolvedor.
+- [TextBlob Docs](https://textblob.readthedocs.io/)
 
 ---
 
-### 👤 Autor
+## Próximos Passos
 
-Desenvolvido por **Alan de Oliveira Gonçalves**. Sinta-se à vontade para contribuir e melhorar este projeto!  
-  
-[![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Alan-oliveir)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alan-ogoncalves)
+- Suporte a outras redes sociais (YouTube, Twitter)
+- Análise de tópicos (LDA)
+- Análise de emoções
+- Autenticação de usuários
+
+---
+
+## Contato
+
+Em caso de dúvidas ou sugestões, abra uma issue ou entre em contato.
+
+---
+
+### Autor
+
+Desenvolvido por **Alan de Oliveira Gonçalves**  
+[GitHub](https://github.com/Alan-oliveir) | [LinkedIn](https://www.linkedin.com/in/alan-ogoncalves)
